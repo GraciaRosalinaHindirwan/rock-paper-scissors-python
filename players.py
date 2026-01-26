@@ -10,7 +10,6 @@ class User:
         while True:
             self.choice = input("Enter your Choice [rock, paper, scissors]: ")
             if self.choice == self.choice.strip().lower() and self.choice in moves:
-                print(f"your choose: {self.choice}")
                 break
             else:
                 print("Invalid move! Choose rock, paper, or scissors!")

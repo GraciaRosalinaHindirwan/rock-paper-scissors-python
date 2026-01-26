@@ -2,7 +2,7 @@ from utils import clear
 import players
 
 #objek
-user_1 = players.user("user1")
+user_1 = players.User("user1")
 AI_1 = players.AIPlayer("AIPlayer")
 
 print("=============================")
@@ -23,6 +23,7 @@ while repeat:
     for i in range(1,4):
         print(f"Round: {i}/3")
         user_1.make_choice()
+        AI_1.random_choice()
                 
         if user_1.choice == AI_1.choice:  # membandingkan nilai acak dengan inputan user
             print("FAIR")
