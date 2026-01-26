@@ -27,34 +27,41 @@ while repeat:
 
     #Loop the game
     print("\n")
-    repeat = input("Do you want to play again? [yes/no]: ").strip().lower() #agar inputan user lower semua
-    if repeat == "yes":
-        print("Current session score will continue.")
-        input("Enter to continue...")
-        repeat = True
-    else:
-        repeat = False
-        clear()
-        print("====  GAME RESULT  ====")
-        print(f"Your Score: {user_1.score}")
-        print(f"Your opponent Score: {AI_1.score}")
-        print("\n")
+    while True:
+        repeat = input("Do you want to play again? [yes/no]: ").strip().lower() #agar inputan user lower semua
+        if repeat == "yes":
+            repeat = True
+            print("Current session score will continue.")
+            input("Enter to continue...")
 
-        if user_1.score > AI_1.score:
-            print("=============================")
-            print("         YOU WIN!!!          ")
-            print("=============================")
+        elif repeat == "no":
+            repeat = False
+            clear()
+            print("====  GAME RESULT  ====")
+            print(f"Your Score: {user_1.score}")
+            print(f"Your opponent Score: {AI_1.score}")
             print("\n")
-        elif user_1.score == AI_1.score:
-            print("=============================")
-            print("        T'S A DRAW           ")
-            print("=============================")
-            print("\n")
+
+            if user_1.score > AI_1.score:
+                print("=============================")
+                print("         YOU WIN!!!          ")
+                print("=============================")
+                print("\n")
+            elif user_1.score == AI_1.score:
+                print("=============================")
+                print("        T'S A DRAW           ")
+                print("=============================")
+                print("\n")
+            else:
+                print("=============================")
+                print("         YOU LOSE!!!         ")
+                print("=============================")
+                print("\n")
+            
+            print("Thankyou for Playing. Byee")
+            break
         else:
-            print("=============================")
-            print("         YOU LOSE!!!         ")
-            print("=============================")
-            print("\n")
-        
-        print("Thankyou for Playing. Byee")
-        break
+            print("Invalid Input...")
+
+
+    
