@@ -1,9 +1,10 @@
-from utils import clear
-import players
+from utils import clear, do_player_choice
+import Player
+import AIPlayers
 
 #objek
-user_1 = players.User("user1")
-AI_1 = players.AIPlayer("AIPlayer")
+user_1 = Player.Player("user1")
+AI_1 = AIPlayers.AIPlayer("AIPlayer")
 
 print("=============================")
 print("         Welcome To          ")
@@ -12,8 +13,6 @@ print("=============================")
 print("\n")
 input("Enter to continue...")
 
-score_user = 0
-score_computer = 0
 repeat = True
 
 clear()
@@ -22,8 +21,8 @@ while repeat:
     print("\n")
     for i in range(1,4):
         print(f"Round: {i}/3")
-        user_1.make_choice()
-        AI_1.random_choice()
+        do_player_choice(user_1)
+        do_player_choice(AI_1)
                 
         if user_1.choice == AI_1.choice:  # membandingkan nilai acak dengan inputan user
             print("FAIR")
@@ -33,10 +32,10 @@ while repeat:
             or (user_1.choice == "paper" and AI_1.choice == "rock")
             ):
             print("WIN")
-            score_user += 1
+            user_1.score += 1
         else:
             print("LOSE")
-            score_computer += 1
+            AI_1.score += 1
 
     #Loop the game
     print("\n")
@@ -49,16 +48,16 @@ while repeat:
         repeat = False
         clear()
         print("====  GAME RESULT  ====")
-        print(f"Your Score: {score_user}")
-        print(f"Your opponent Score: {score_computer}")
+        print(f"Your Score: {user_1.score}")
+        print(f"Your opponent Score: {AI_1.score}")
         print("\n")
 
-        if score_user > score_computer:
+        if user_1.score > AI_1.score:
             print("=============================")
             print("         YOU WIN!!!          ")
             print("=============================")
             print("\n")
-        elif score_user == score_computer:
+        elif user_1.score == AI_1.score:
             print("=============================")
             print("        T'S A DRAW           ")
             print("=============================")
