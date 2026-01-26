@@ -1,24 +1,26 @@
+import random
+
 moves = ["rock", "paper", "scissors"]
 class user:
-    def __init__(self, username, choice):
+    def __init__(self, username):
         self.username = username
         self.choice = None
     
-    def make_choice():
+    def make_choice(self):
         while True:
             self.choice = input("Enter your Choice [rock, paper, scissors]: ")
-            self.choice = self.choice.strip().lower()
-            if self.choice in moves:
+            if self.choice == self.choice.strip().lower() and self.choice in moves:
                 break
             else:
                 print("Invalid move! Choose rock, paper, or scissors!")
 
 
 class AIPlayer:
-    def __init__(self, name, choice, AImoves):
+    def __init__(self, name):
         self.name = "AIPlayer"
-        self.AIchoice = None 
+        self.choice = None 
         self.AImoves = moves
     
-    def random_choice():
-        self.AIchoice = random.choice(AI.moves)
+    def random_choice(self):
+        self.choice = random.choice(self.AImoves)
+        print(f"your opponent: {self.choice}")

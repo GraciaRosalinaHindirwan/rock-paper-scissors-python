@@ -1,7 +1,10 @@
 import random
 from utils import clear
+import players
 
-choices = ["rock", "paper", "scissors"]
+#objek
+user_1 = players.user("user1")
+AI_1 = players.AIPlayer("AIPlayer")
 
 print("=============================")
 print("         Welcome To          ")
@@ -20,23 +23,15 @@ while repeat:
     print("\n")
     for i in range(1,4):
         print(f"Round: {i}/3")
-        while True: #looping untuk error handling
-            user = input("Enter your Choice [rock, paper, scissors]: ")
-            user = user.strip().lower()
-            if user in choices:
-                break
-            else:
-                print("Invalid move! Choose rock, paper, or scissors!")
-
-        computer = random.choice(choices)  # nilai acak disimpan ke dalam variabel computer
-        print(f"Your opponent chooses: {computer}")
-
-        if user == computer:  # membandingkan nilai acak dengan inputan user
+        user_1.make_choice()
+        AI_1.random_choice()
+                
+        if user_1.choice == AI_1.choice:  # membandingkan nilai acak dengan inputan user
             print("FAIR")
         elif (
-            (user == "rock" and computer == "scissors")
-            or (user == "scissors" and computer == "paper")
-            or (user == "paper" and computer == "rock")
+            (user_1.choice == "rock" and AI_1.choice == "scissors")
+            or (user_1.choice == "scissors" and AI_1.choice == "paper")
+            or (user_1.choice == "paper" and AI_1.CHOICE == "rock")
             ):
             print("WIN")
             score_user += 1
