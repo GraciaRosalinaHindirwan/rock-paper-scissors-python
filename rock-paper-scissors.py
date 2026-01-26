@@ -1,4 +1,3 @@
-import random
 from utils import clear
 import players
 
@@ -24,14 +23,13 @@ while repeat:
     for i in range(1,4):
         print(f"Round: {i}/3")
         user_1.make_choice()
-        AI_1.random_choice()
                 
         if user_1.choice == AI_1.choice:  # membandingkan nilai acak dengan inputan user
             print("FAIR")
         elif (
             (user_1.choice == "rock" and AI_1.choice == "scissors")
             or (user_1.choice == "scissors" and AI_1.choice == "paper")
-            or (user_1.choice == "paper" and AI_1.CHOICE == "rock")
+            or (user_1.choice == "paper" and AI_1.choice == "rock")
             ):
             print("WIN")
             score_user += 1
