@@ -1,0 +1,5 @@
+# Mengabaikan semua file .pyc
+*.pyc
+
+# Mengabaikan folder cache Python
+__pycache__/
