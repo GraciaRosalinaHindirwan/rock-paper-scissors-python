@@ -1,7 +1,7 @@
 import random
 
 moves = ["rock", "paper", "scissors"]
-class user:
+class User:
     def __init__(self, username):
         self.username = username
         self.choice = None
@@ -10,6 +10,7 @@ class user:
         while True:
             self.choice = input("Enter your Choice [rock, paper, scissors]: ")
             if self.choice == self.choice.strip().lower() and self.choice in moves:
+                print(f"your choose: {self.choice}")
                 break
             else:
                 print("Invalid move! Choose rock, paper, or scissors!")
