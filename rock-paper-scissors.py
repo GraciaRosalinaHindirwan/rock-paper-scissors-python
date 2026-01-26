@@ -19,23 +19,11 @@ clear()
 while repeat:
     print("You’ll play this game 3 times in a row!")
     print("\n")
+    
     for i in range(1,4):
         print(f"Round: {i}/3")
-        do_player_choice(user_1)
-        do_player_choice(AI_1)
-                
-        if user_1.choice == AI_1.choice:  # membandingkan nilai acak dengan inputan user
-            print("FAIR")
-        elif (
-            (user_1.choice == "rock" and AI_1.choice == "scissors")
-            or (user_1.choice == "scissors" and AI_1.choice == "paper")
-            or (user_1.choice == "paper" and AI_1.choice == "rock")
-            ):
-            print("WIN")
-            user_1.score += 1
-        else:
-            print("LOSE")
-            AI_1.score += 1
+        user_1.battle(AI_1)
+    
 
     #Loop the game
     print("\n")

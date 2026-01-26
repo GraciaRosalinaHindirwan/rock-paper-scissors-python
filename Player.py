@@ -1,4 +1,5 @@
 import UserOptions
+from utils import do_player_choice
 
 class Player:
     def __init__(self, username):
@@ -13,3 +14,21 @@ class Player:
                 break
             else:
                 print("Invalid move! Choose rock, paper, or scissors!")
+
+    def battle(self, opponent):
+        do_player_choice(self)
+        do_player_choice(opponent)
+        if self.choice == opponent.choice:  # membandingkan nilai acak dengan inputan user
+            print("FAIR")
+        elif (
+            (self.choice == "rock" and opponent.choice == "scissors")
+            or (self.choice == "scissors" and opponent.choice == "paper")
+            or (self.choice == "paper" and opponent.choice == "rock")
+            ):
+            print("WIN")
+            self.score += 1
+        else:
+            print("LOSE")
+            opponent.score += 1
+
+
