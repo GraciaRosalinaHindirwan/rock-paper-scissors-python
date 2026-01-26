@@ -25,4 +25,4 @@ The player competes against the computer using classic game rules, with a cumula
 1. Make sure Python is installed on your system.
 2. Clone this repository:
    ```bash
-   git clone [https://github.com/GraciaRosalinaHindirwan/rock-paper-scissors-python.git]
+   git clone https://github.com/GraciaRosalinaHindirwan/rock-paper-scissors-python.git
