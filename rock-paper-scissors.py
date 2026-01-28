@@ -1,10 +1,11 @@
-from utils import clear, do_player_choice
+from utils import clear, UserDifficulty, convertStringToDifficuly
 import Player
 import AIPlayers
+from Difficulty import Difficulty
+from HardAIPlayer import HardAIPlayer
 
 #objek
 user_1 = Player.Player("user1")
-AI_1 = AIPlayers.AIPlayer("AIPlayer")
 
 print("=============================")
 print("         Welcome To          ")
@@ -16,10 +17,17 @@ input("Enter to continue...")
 repeat = True
 
 clear()
+difficult = convertStringToDifficuly()
+if difficult == Difficulty.EASY or difficult == Difficulty.NORMAL:
+    AI_1 = AIPlayers.AIPlayer("AI_1")
+else:
+    AI_1 = HardAIPlayer("AI_1", user_1)
+
 while repeat:
     print("You’ll play this game 3 times in a row!")
     print("\n")
-    
+
+
     for i in range(1,4):
         print(f"Round: {i}/3")
         user_1.battle(AI_1)

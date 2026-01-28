@@ -1,1 +1,1 @@
-plenger
+AI_1 = AIPlayers.AIPlayer("AIPlayer", convertDifficuly())
